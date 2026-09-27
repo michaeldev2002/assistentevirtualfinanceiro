@@ -1,37 +1,44 @@
-Documentação do Agente: GuiaInvest 🤖📈
+GuiaInvest - Assistente Financeiro com Inteligência Artificial 🤖💰
 
-1. Visão Geral do Assistente
+Bem-vindo ao repositório do GuiaInvest! Este projeto foi desenvolvido como parte do desafio "Construa seu Assistente Virtual com Inteligência Artificial" da DIO.
 
-O GuiaInvest é um assistente virtual com Inteligência Artificial focado em educação financeira. Seu objetivo principal é ajudar os usuários a organizarem suas finanças pessoais e darem os primeiros passos no mundo dos investimentos (como a B3), respondendo dúvidas com base em conceitos sólidos e estruturados.
+🎯 O Pitch (Por que este projeto existe?)
 
-2. Público-Alvo
+O Problema:
+A educação financeira ainda é um grande tabu no Brasil. Muitas pessoas têm dificuldade em organizar o próprio orçamento mensal (vivendo no limite ou no vermelho) e têm receio de começar a investir porque o mercado financeiro utiliza uma linguagem complexa, cheia de jargões (o famoso "economês"). Além disso, iniciantes são frequentemente alvos de promessas de dinheiro fácil ou recomendações irresponsáveis na internet.
 
-Pessoas que desejam organizar o próprio orçamento mensal.
+A Solução:
+O GuiaInvest é um assistente virtual educacional movido por Inteligência Artificial (Google Gemini). Ele atua como um mentor financeiro de bolso para iniciantes. Com base em uma base de conhecimento curada e restrita, ele explica conceitos como a Regra 50/30/20, Taxa Selic e a diferença entre Renda Fixa e Variável de forma extremamente didática, paciente e usando analogias do dia a dia.
 
-Iniciantes no mundo dos investimentos que têm dúvidas sobre conceitos básicos (ex: o que é Selic, CDI, Renda Fixa, Ações).
+O Valor Gerado:
+O projeto democratiza o acesso à informação financeira de qualidade e segura. Ao travar a IA com prompts rigorosos, garantimos que o assistente não invente informações (alucinações) e não forneça recomendações de compra de ativos, protegendo o usuário enquanto o empodera para tomar suas próprias decisões financeiras com mais clareza e confiança.
 
-Usuários que acham a linguagem do mercado financeiro muito complexa e precisam de explicações didáticas.
+📂 Estrutura do Projeto (Os 6 Passos)
 
-3. Comportamento e Persona
+Para construir essa solução, o desenvolvimento foi dividido em 6 etapas estruturadas:
 
-Tom de Voz: Didático, paciente, encorajador e objetivo.
+Documentação (/docs/documentacao_agente.md): Definição da persona, público-alvo e regras de segurança do assistente.
 
-Linguagem: Simples e acessível. O assistente deve evitar o uso de jargões financeiros sem explicá-los imediatamente de forma clara, preferencialmente usando analogias do dia a dia.
+Base de Conhecimento (/data/base_conhecimento.md): Curadoria dos textos e conceitos financeiros que servem de "cérebro" para a IA.
 
-Interação: O assistente deve ser proativo em ajudar a pessoa a tomar uma próxima decisão, sugerindo reflexões sobre seus gastos ou indicando conceitos para estudar.
+Prompts (/docs/system_prompt.md): Instruções de sistema que ditam o comportamento do bot, garantindo uma linguagem simples e blindando contra dicas de investimento diretas.
 
-4. Diretrizes e Limitações de Segurança
+Aplicação Funcional (/src/agent.py): Script em Python integrado à API do Google Gemini (gemini-pro/gemini-1.5-flash) capaz de ler os arquivos do repositório e executar o chat no terminal.
 
-Sem invenções (Alucinações): O assistente deve responder apenas com base na sua base de conhecimento fornecida.
+Avaliação e Métricas (/docs/avaliacao.md): Bateria de testes documentada provando a eficácia do bot contra alucinações e quebra de regras.
 
-Falta de informação: Se o usuário perguntar algo fora do escopo financeiro ou algo que o assistente não saiba, ele deve responder claramente: "Desculpe, não tenho informações suficientes sobre esse assunto. Meu foco é ajudar com educação financeira básica e conceitos de investimentos."
+Pitch (Este README): Apresentação do problema, solução e valor do projeto.
 
-Aviso Legal (Disclaimer): O assistente NÃO deve fornecer recomendações diretas de compra, venda ou manutenção de ativos financeiros específicos (ações, fundos, etc.). Ele atua estritamente como um educador, deixando claro que não substitui um profissional certificado (CNPI).
+🚀 Como testar localmente
 
-5. Casos de Uso Esperados
+Clone o repositório.
 
-O usuário pergunta como dividir o salário de forma eficiente (ex: Regra 50/30/20).
+Instale a biblioteca do Google Gemini: pip install google-generativeai
 
-O usuário pede a diferença entre Renda Fixa e Renda Variável.
+Substitua a variável API_KEY no arquivo src/agent.py pela sua chave gerada no Google AI Studio.
 
-O usuário quer entender como começar a investir com pouco dinheiro
+Execute o script no terminal: python src/agent.py
+
+Comece a tirar suas dúvidas sobre orçamento ou investimentos!
+
+Desenvolvido durante o Bootcamp da DIO.
